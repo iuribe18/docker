@@ -38,22 +38,28 @@ Deleted: sha256:6013ae1a63c2ee58a8949f03c6366a3ef6a2f386a7db27d86de2de965e9f450b
 ## All containers
 ```bash
 osboxes@osboxes:~$ docker ps -a
-CONTAINER ID   IMAGE          COMMAND    CREATED      STATUS                  PORTS     NAMES
-11e266692a65   d2c94e258dcb   "/hello"   2 days ago   Exited (0) 2 days ago             beautiful_hofstadter
+CONTAINER ID   IMAGE       COMMAND                  CREATED        STATUS                    PORTS     NAMES
+b86a71a35a91   nginx       "/docker-entrypoint.…"   46 hours ago   Exited (0) 45 hours ago             web02
+36d6590d842d   nginx       "/docker-entrypoint.…"   46 hours ago   Exited (0) 45 hours ago             web01
+d34a3c1c2b49   nginx       "/docker-entrypoint.…"   47 hours ago   Exited (0) 45 hours ago             devtest
+d065fcdf8feb   nginx:2.0   "nginx -g 'daemon of…"   4 days ago     Exited (0) 45 hours ago             nginx
+osboxes@osboxes:~$ docker rm $(docker ps -aq)
+b86a71a35a91
+36d6590d842d
+d34a3c1c2b49
+d065fcdf8feb
+osboxes@osboxes:~$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
 
 ## Delete containers
 One by one (by CONTAINER ID, $ docker rm CONTAINER ID)
 ```bash
-osboxes@osboxes:~$ docker rm 11e266692a65
-11e266692a65
+osboxes@osboxes:~$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS    PORTS     NAMES
+28b6c94dda8e   nginx     "/docker-entrypoint.…"   2 minutes ago   Created             web01
+osboxes@osboxes:~$ docker rm 28b6c94dda8e
+28b6c94dda8e
 osboxes@osboxes:~$ docker ps -a
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
-
-## Delete containers (is running)
-```bash
-osboxes@osboxes:~/Documents$ docker rm -f nginx
-nginx
-```
-

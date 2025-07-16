@@ -15,6 +15,7 @@ docker build -t nginx:1.0 .
 osboxes@osboxes:~/Documents$ docker tag nginx:1.0 nginx:latest
 ```
 
+## List Images
 ```bash
 osboxes@osboxes:~/Documents$ docker images
 REPOSITORY   TAG       IMAGE ID       CREATED          SIZE

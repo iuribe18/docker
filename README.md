@@ -12,7 +12,13 @@ docker basics
 
 [containers](/commands/shell.md)
 
-[containers](/commands/volumes.md)
+[volumes](/commands/volumes.md)
+
+[dockerhub](/commands/docker-hub.md)
+
+[environments](/commands/env-vars.md)
+
+[Dockerfile](/Dockerfile/dockerfile.md)
 
 
 ## Install Docker
